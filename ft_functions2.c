@@ -6,7 +6,7 @@
 /*   By: fhassane <fhassane@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/11 20:24:00 by fhassane          #+#    #+#             */
-/*   Updated: 2024/12/12 20:24:40 by fhassane         ###   ########.fr       */
+/*   Updated: 2024/12/14 14:46:33 by fhassane         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,9 +26,12 @@ int	ft_putptr(uintptr_t ptr)
 {
 	int	len;
 
-	write(1, "0x", 2);
 	if (ptr == 0)
-		return (write(1, "0", 1) + 2);
+	{
+		(write(1, "(nil)", 5));
+		return (5);
+	}
+	write(1, "0x", 2);
 	ft_put_ptr(ptr);
 	len = 0;
 	while (ptr != 0)
@@ -62,7 +65,7 @@ int	ft_put_unsigned_z(unsigned int nb)
 	return (count);
 }
 
-int	ft_putnbr_hex_cap(unsigned long n)
+int	ft_putnbr_hex_cap(unsigned int n)
 {
 	int		i;
 	char	*hex_base;
